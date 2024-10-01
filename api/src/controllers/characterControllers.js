@@ -12,7 +12,6 @@ const getCharacters = async(req, res) => {
             charactersData[i] = {
                 name: charactersData[i].name,
                 id: charactersData[i].id,
-                description: charactersData[i].description,
                 image: charactersData[i].thumbnail.path + "." + charactersData[i].thumbnail.extension,
             }
 
