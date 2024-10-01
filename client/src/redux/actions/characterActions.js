@@ -11,12 +11,12 @@ export const getCharacters = () => async(dispatch) => {
     }
 }
 
-/* export const getDetails = (name) => async(dispatch) => {
+export const getDetails = (id) => async(dispatch) => {
     try {
-        const { data } = await axios.get(`/characters/${name}`)
+        const { data } = await axios.get(`/characters/${id}`)
         dispatch(getCharacterDetails(data))
     }
     catch(e) {
         console.log(e)
     }
-} */
+} 
