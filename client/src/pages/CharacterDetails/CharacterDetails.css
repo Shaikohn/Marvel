@@ -1,0 +1,17 @@
+.detailsContainer {
+    display: flex;
+}
+
+.infoContainer {
+    display: block;
+}
+
+.detailsImage {
+    height: 500px;
+    width: 400px;
+}
+
+.thumbnailImage {
+    height: 200px;
+    width: 200px;
+}

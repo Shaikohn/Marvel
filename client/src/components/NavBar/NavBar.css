@@ -1,0 +1,13 @@
+.navContainer {
+    background-color: rgb(14, 64, 94);
+    color: white;
+    display: flex;
+    font-size: 20px;
+    gap: 5px;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.links {
+    color: white;
+}
