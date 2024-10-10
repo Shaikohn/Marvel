@@ -1,0 +1,20 @@
+.loaderIcon {
+    animation: changeSize 0.5s linear infinite;
+    height: 300px;
+    width: 300px;
+}
+
+@keyframes changeSize {
+    from {
+        height: 100px;
+        width: 100px;
+    }
+    to {
+        height: 200px;
+        width: 200px;
+    }
+    to {
+        height: 300px;
+        width: 300px;
+    }
+}

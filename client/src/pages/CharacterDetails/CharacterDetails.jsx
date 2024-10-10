@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom'
 import { getDetails } from '../../redux/actions/characterActions';
 import { clearCharacterDetails } from '../../redux/slices/characterSlice';
+import Loader from '../../components/Loader/Loader';
 
 const CharacterDetails = () => {
 
@@ -43,28 +44,33 @@ const CharacterDetails = () => {
 } */
 
   return (
-    <div className='detailsContainer'>
-      <img className='detailsImage' src={characterDetails.image} />
-      <div className='infoContainer'>
-        <h1>{characterDetails.name}</h1>
-        <p> {characterDetails.description} </p>
-        <div style={{display: 'flex'}}>
-        <button onClick={prevPage}>atras</button>
-        {
-        characterDetails?.appearances?.slice((page - 1) * perPage, (page - 1) * perPage + perPage)
-        .map((a, i) => {
+    <>
+    {
+      Object.keys(characterDetails).length > 0 ?
+      <div className='detailsContainer'>
+        <img className='detailsImage' src={characterDetails.image} />
+        <div className='infoContainer'>
+          <h1>{characterDetails.name}</h1>
+          <p> {characterDetails.description} </p>
+          <div style={{display: 'flex'}}>
+          <button onClick={prevPage}>atras</button>
+          {
+          characterDetails?.appearances?.slice((page - 1) * perPage, (page - 1) * perPage + perPage)
+          .map((a, i) => {
           return (
             <div key={i}>
               <h3>{a.title}</h3>
               <img className='thumbnailImage' src={a.thumbnail} />
             </div>
           )
-        })
-        }
-        <button onClick={nextPage}>adelante</button>
+          })
+          }
+          <button onClick={nextPage}>adelante</button>
         </div>
-        </div>
-    </div>
+      </div>
+    </div> : <Loader />
+    }
+    </>
   )
 }
 
